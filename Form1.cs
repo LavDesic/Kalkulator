@@ -20,12 +20,16 @@ namespace Kalkulator
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            broj2 = textBox2.Text;
+            string broj2 = textBox2.Text;
+            Broj Broj2 = new Broj(broj2);
+            textBox3.Text = Convert.ToString(Broj2.vrednost);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            broj1 = textBox1.Text;
+            string broj1 = textBox1.Text;
+            Broj Broj1 = new Broj(broj1);
+            textBox3.Text = Convert.ToString(Broj1.vrednost);
         }
 
     }

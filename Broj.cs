@@ -15,7 +15,8 @@ namespace Kalkulator
         }
         public Broj(string a)
         {
-            int privremeno = 0;
+            vrednost = 0;
+            //int privremeno = 0;
             int trenutno = 0;
             int pom = 0;
             int val = 0;
@@ -25,23 +26,6 @@ namespace Kalkulator
                 {
                     case 'M':
                         val = 1000;
-                        if (pom==0)
-                        {
-                            trenutno = trenutno + val;
-                        }
-                        if (val>trenutno)
-                        {
-                            vrednost = vrednost + val - trenutno;
-                            pom = 0;
-                        }
-                        if (val==trenutno)
-                        {
-                            pom++;
-                        }
-                        if (val<trenutno)
-                        {
-                            vrednost = trenutno;
-                        }
                         break;
                     case 'D':
                         val = 500;
@@ -61,6 +45,34 @@ namespace Kalkulator
                     case 'I':
                         val = 1;
                         break;
+                }
+                if (val == trenutno)
+                {
+                    pom++;
+                }
+                if (val < trenutno)
+                {
+                    vrednost = vrednost + trenutno * pom;
+                    pom = 0;
+                }
+                if (pom == 0)
+                {
+                    trenutno = val;
+                    pom++;
+                }
+                if (val > trenutno)
+                {
+                    vrednost = vrednost + val - pom * trenutno;
+                    pom = 0;
+                }
+                if (pom == 3)
+                {
+                    vrednost = vrednost + pom * trenutno;
+                    pom = 0;
+                }
+                if (i==a.Length-1)
+                {
+                    vrednost = vrednost + pom * trenutno;
                 }
             }
         }
