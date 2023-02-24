@@ -29,7 +29,7 @@ namespace Kalkulator
         {
             string broj1 = textBox1.Text;
             Broj Broj1 = new Broj(broj1);
-            textBox3.Text = Convert.ToString(Broj1.vrednost);
+            textBox3.Text = Convert.ToString(Broj1.pretvori());
         }
 
     }
