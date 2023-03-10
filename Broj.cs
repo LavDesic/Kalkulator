@@ -21,6 +21,10 @@ namespace Kalkulator
         {
 
         }
+        public Broj(int x)
+        {
+            this.vrednost = x;
+        }
         public Broj(string a)
         {
             niz[0].val = 1;
@@ -94,7 +98,7 @@ namespace Kalkulator
         }
         public string pretvori() //ne ispisuje nista
         {
-            string s="";
+            /*string s="";
             for (int i=niz.Length-1;i>=0;i--)
             {
                 if (this.vrednost/niz[i].val>0)
@@ -116,7 +120,45 @@ namespace Kalkulator
                     }
                 }
             }
+            return s;*/
+            string[] slova = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+            int[] vrednosti = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+
+            string s = "";
+            int i = 0;
+            while (this.vrednost != 0)
+            {
+                if (this.vrednost >= vrednosti[i])
+                {
+                    s = s + slova[i];
+                    this.vrednost = this.vrednost - vrednosti[i];
+                }
+                else
+                {
+                    i++;
+                }
+            }
             return s;
+        }
+        public static Broj saberi(Broj broj1,Broj broj2)
+        {
+            Broj br = new Broj(broj1.vrednost + broj2.vrednost);
+            return br;
+        }
+        public static Broj oduzmi(Broj broj1, Broj broj2)
+        {
+            Broj br = new Broj(broj1.vrednost - broj2.vrednost);
+            return br;
+        }
+        public static Broj pomnozi(Broj broj1, Broj broj2)
+        {
+            Broj br = new Broj(broj1.vrednost * broj2.vrednost);
+            return br;
+        }
+        public static Broj podeli(Broj broj1, Broj broj2)
+        {
+            Broj br = new Broj(broj1.vrednost / broj2.vrednost);
+            return br;
         }
     }
 }
