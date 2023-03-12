@@ -77,6 +77,39 @@ namespace Kalkulator
             }
         }
 
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Kompleksni k1 = new Kompleksni(Convert.ToDouble(textBox4.Text),Convert.ToDouble(textBox5.Text));
+            Kompleksni k2 = new Kompleksni(Convert.ToDouble(textBox6.Text), Convert.ToDouble(textBox7.Text));
+            textBox8.Text = Kompleksni.saberi(k1, k2).ispis();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Kompleksni k1 = new Kompleksni(Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox5.Text));
+            Kompleksni k2 = new Kompleksni(Convert.ToDouble(textBox6.Text), Convert.ToDouble(textBox7.Text));
+            textBox8.Text = Kompleksni.oduzmi(k1, k2).ispis();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Kompleksni k1 = new Kompleksni(Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox5.Text));
+            Kompleksni k2 = new Kompleksni(Convert.ToDouble(textBox6.Text), Convert.ToDouble(textBox7.Text));
+            textBox8.Text = Kompleksni.pomnozi(k1, k2).ispis();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Kompleksni k1 = new Kompleksni(Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox5.Text));
+            Kompleksni k2 = new Kompleksni(Convert.ToDouble(textBox6.Text), Convert.ToDouble(textBox7.Text));
+            textBox8.Text = Kompleksni.podeli(k1, k2).ispis();
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string broj1 = textBox1.Text;

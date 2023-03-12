@@ -50,6 +50,7 @@ namespace Kalkulator
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -139,6 +140,7 @@ namespace Kalkulator
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(93, 23);
             this.textBox4.TabIndex = 9;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
@@ -169,6 +171,7 @@ namespace Kalkulator
             this.button5.TabIndex = 16;
             this.button5.Text = "/";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -178,6 +181,7 @@ namespace Kalkulator
             this.button6.TabIndex = 15;
             this.button6.Text = "*";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -187,6 +191,7 @@ namespace Kalkulator
             this.button7.TabIndex = 14;
             this.button7.Text = "-";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -196,6 +201,7 @@ namespace Kalkulator
             this.button8.TabIndex = 13;
             this.button8.Text = "+";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label3
             // 
@@ -233,11 +239,19 @@ namespace Kalkulator
             this.label6.TabIndex = 20;
             this.label6.Text = "imaginaran 2";
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(298, 318);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(212, 23);
+            this.textBox8.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 601);
+            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -289,6 +303,7 @@ namespace Kalkulator
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }
 
