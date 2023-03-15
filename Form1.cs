@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Singulink.Numerics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,8 +22,18 @@ namespace Kalkulator
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            string broj2 = textBox2.Text;
-            Broj Broj2 = new Broj(broj2);
+            //if (textBox12.Text != null)textBox12.Clear();
+            if (Broj.ProveriRimskiRegex(textBox1.Text))
+            {
+                string broj2 = textBox2.Text;
+                Broj Broj2 = new Broj(broj2);
+            }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
+                textBox1.Clear();
+            }
             //textBox3.Text = Convert.ToString(Broj2.vrednost);
         }
 
@@ -43,8 +55,16 @@ namespace Kalkulator
             string broj1 = textBox1.Text;
             Broj Broj1 = new Broj(broj1);
 
-            Broj br = Broj.oduzmi(Broj1, Broj2);
-            textBox3.Text = br.pretvori();
+            if (Broj1.vrednost < Broj2.vrednost)
+            {
+                textBox1.Clear();
+                textBox2.Clear();
+            }
+            else
+            {
+                Broj br = Broj.oduzmi(Broj1, Broj2);
+                textBox3.Text = br.pretvori();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -110,10 +130,115 @@ namespace Kalkulator
             textBox8.Text = Kompleksni.podeli(k1, k2).ispis();
         }
 
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+            string a = textBox11.Text;
+            if (Dugacak.provera(a))
+            {
+                Dugacak d1 = new Dugacak(a);
+            }
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+            string b = textBox10.Text;
+            if (Dugacak.provera(b))
+            {
+                Dugacak d2 = new Dugacak(b);
+            }
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+            //textBox12.Clear();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            string a = textBox11.Text;
+            Dugacak d1 = new Dugacak();
+            if (Dugacak.provera(a))
+            {
+                d1.broj = BigDecimal.Parse(a);
+            }
+            string b = textBox10.Text;
+            Dugacak d2 = new Dugacak();
+            if (Dugacak.provera(b))
+            {
+                d2.broj = BigDecimal.Parse(b);
+            }
+            BigDecimal rez = d1.broj + d2.broj;
+            textBox9.Text = Convert.ToString(rez);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            string a = textBox11.Text;
+            Dugacak d1 = new Dugacak();
+            if (Dugacak.provera(a))
+            {
+                d1.broj = BigDecimal.Parse(a);
+            }
+            string b = textBox10.Text;
+            Dugacak d2 = new Dugacak();
+            if (Dugacak.provera(b))
+            {
+                d2.broj = BigDecimal.Parse(b);
+            }
+            BigDecimal rez = d1.broj - d2.broj;
+            textBox9.Text = Convert.ToString(rez);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string a = textBox11.Text;
+            Dugacak d1 = new Dugacak();
+            if (Dugacak.provera(a))
+            {
+                d1.broj = BigDecimal.Parse(a);
+            }
+            string b = textBox10.Text;
+            Dugacak d2 = new Dugacak();
+            if (Dugacak.provera(b))
+            {
+                d2.broj = BigDecimal.Parse(b);
+            }
+            BigDecimal rez = d1.broj * d2.broj;
+            textBox9.Text = Convert.ToString(rez);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string a = textBox11.Text;
+            Dugacak d1 = new Dugacak();
+            if (Dugacak.provera(a))
+            {
+                d1.broj = BigDecimal.Parse(a);
+            }
+            string b = textBox10.Text;
+            Dugacak d2 = new Dugacak();
+            if (Dugacak.provera(b))
+            {
+                d2.broj = BigDecimal.Parse(b);
+            }
+            BigDecimal rez = d1.broj / d2.broj;
+            textBox9.Text = Convert.ToString(rez);
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string broj1 = textBox1.Text;
-            Broj Broj1 = new Broj(broj1);
+            //if (textBox12.Text != null) textBox12.Clear();
+            if (Broj.ProveriRimskiRegex(textBox1.Text))
+            {
+                string broj1 = textBox1.Text;
+                Broj Broj1 = new Broj(broj1);
+            }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
+                textBox1.Clear();
+            }
             //textBox3.Text = Broj1.pretvori();
         }
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Kalkulator
@@ -159,6 +160,14 @@ namespace Kalkulator
         {
             Broj br = new Broj(broj1.vrednost / broj2.vrednost);
             return br;
+        }
+        public static bool ProveriRimskiRegex(string str)
+        {
+            string strRegex = @"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$";
+            if (Regex.IsMatch(str, strRegex))
+                return (true);
+            else
+                return (false);
         }
     }
 }

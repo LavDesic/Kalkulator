@@ -8,4 +8,8 @@
     <RootNamespace>Kalkulator rimskih</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Singulink.Numerics.BigDecimal" Version="3.0.0" />
+  </ItemGroup>
+
 </Project>
