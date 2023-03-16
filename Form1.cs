@@ -23,7 +23,7 @@ namespace Kalkulator
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             //if (textBox12.Text != null)textBox12.Clear();
-            if (Broj.ProveriRimskiRegex(textBox1.Text))
+            if (Broj.ProveriRimskiRegex(textBox2.Text))
             {
                 string broj2 = textBox2.Text;
                 Broj Broj2 = new Broj(broj2);
@@ -161,11 +161,21 @@ namespace Kalkulator
             {
                 d1.broj = BigDecimal.Parse(a);
             }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
+            }
             string b = textBox10.Text;
             Dugacak d2 = new Dugacak();
             if (Dugacak.provera(b))
             {
                 d2.broj = BigDecimal.Parse(b);
+            }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
             }
             BigDecimal rez = d1.broj + d2.broj;
             textBox9.Text = Convert.ToString(rez);
@@ -179,11 +189,21 @@ namespace Kalkulator
             {
                 d1.broj = BigDecimal.Parse(a);
             }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
+            }
             string b = textBox10.Text;
             Dugacak d2 = new Dugacak();
             if (Dugacak.provera(b))
             {
                 d2.broj = BigDecimal.Parse(b);
+            }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
             }
             BigDecimal rez = d1.broj - d2.broj;
             textBox9.Text = Convert.ToString(rez);
@@ -197,11 +217,21 @@ namespace Kalkulator
             {
                 d1.broj = BigDecimal.Parse(a);
             }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
+            }
             string b = textBox10.Text;
             Dugacak d2 = new Dugacak();
             if (Dugacak.provera(b))
             {
                 d2.broj = BigDecimal.Parse(b);
+            }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
             }
             BigDecimal rez = d1.broj * d2.broj;
             textBox9.Text = Convert.ToString(rez);
@@ -215,11 +245,21 @@ namespace Kalkulator
             {
                 d1.broj = BigDecimal.Parse(a);
             }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
+            }
             string b = textBox10.Text;
             Dugacak d2 = new Dugacak();
             if (Dugacak.provera(b))
             {
                 d2.broj = BigDecimal.Parse(b);
+            }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
             }
             BigDecimal rez = d1.broj / d2.broj;
             textBox9.Text = Convert.ToString(rez);

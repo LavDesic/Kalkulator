@@ -61,6 +61,7 @@ namespace Kalkulator
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -345,11 +346,21 @@ namespace Kalkulator
             this.label8.TabIndex = 31;
             this.label8.Text = "ERROR";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(314, 242);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(187, 15);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "IMAGINARNI DEO UPISATI BEZ  \"i\"";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 749);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox12);
@@ -423,6 +434,7 @@ namespace Kalkulator
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 
