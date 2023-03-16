@@ -137,6 +137,11 @@ namespace Kalkulator
             {
                 Dugacak d1 = new Dugacak(a);
             }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
+            }
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
@@ -145,6 +150,11 @@ namespace Kalkulator
             if (Dugacak.provera(b))
             {
                 Dugacak d2 = new Dugacak(b);
+            }
+            else
+            {
+                string greska = "GRESKA";
+                textBox12.Text = greska;
             }
         }
 
