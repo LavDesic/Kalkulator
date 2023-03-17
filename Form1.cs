@@ -30,9 +30,9 @@ namespace Kalkulator
             }
             else
             {
-                string greska = "GRESKA";
+                string greska = "STEFAN TESMANOVIC";
                 textBox12.Text = greska;
-                textBox1.Clear();
+                textBox2.Clear();
             }
             //textBox3.Text = Convert.ToString(Broj2.vrednost);
         }
